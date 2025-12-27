@@ -1,0 +1,43 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
+body { margin: 0; background: #000; color: white; font-family: 'Courier New', monospace; overflow: hidden; }
+
+#game-screen { width: 100vw; height: 100vh; position: relative; display: flex; flex-direction: column; }
+
+#ui-top { display: flex; justify-content: space-between; padding: 10px; background: #000; z-index: 100; font-weight: bold; }
+
+#office { 
+    flex: 1; position: relative; background: #151515; 
+    display: flex; align-items: center; justify-content: center; 
+}
+
+/* Janela Esticada e Centralizada */
+.window-style {
+    width: 45%; height: 30%; border: 4px solid #444;
+    position: absolute; left: 5%; /* Ajustado para dar espaço visual */
+}
+
+/* Porta na Direita */
+.door-style {
+    width: 25%; height: 75%; border: 4px solid #444;
+    position: absolute; right: 5%;
+}
+
+.aperture { display: flex; align-items: center; justify-content: center; transition: 0.2s; background: #050505; }
+.closed { background: #500; border-color: red; }
+
+#motion-alert {
+    position: absolute; top: 10px; left: 10px; color: #0f0; 
+    background: rgba(0,0,0,0.7); padding: 5px; font-size: 0.8rem;
+}
+
+#camera-monitor { position: absolute; inset: 0; background: #000; display: none; flex-direction: column; z-index: 150; }
+#cam-view { flex: 1; border: 5px solid #222; position: relative; }
+#cam-controls { padding: 10px; background: #111; }
+#cam-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 5px; }
+.cam-btn { padding: 15px; background: #222; color: #0f0; border: 1px solid #0f0; }
+
+#office-controls { display: flex; height: 85px; }
+#office-controls button { flex: 1; background: #222; color: white; border: 1px solid #444; }
+
+.danger-flash { animation: flash 1s infinite; }
+@keyframes flash { 0% { background: transparent; } 50% { background: rgba(255,0,0,0.3); } 100% { background: transparent; } }
